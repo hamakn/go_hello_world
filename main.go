@@ -26,6 +26,9 @@ func main() {
 	myPrintln("== 004 Function values ==")
 	examples.FunctionValuesExample()
 
+	myPrintln("== 005 Variadic function ==")
+	examples.VariadicFunctionExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
