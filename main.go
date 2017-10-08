@@ -20,6 +20,9 @@ func main() {
 	fmt.Println(examples.MySqrt(2))
 	fmt.Println(math.Sqrt(2))
 
+	myPrintln("== 003 Struct ==")
+	examples.StructExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
