@@ -23,6 +23,9 @@ func main() {
 	myPrintln("== 003 Struct ==")
 	examples.StructExample()
 
+	myPrintln("== 004 Function values ==")
+	examples.FunctionValuesExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
