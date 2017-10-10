@@ -38,6 +38,9 @@ func main() {
 	myPrintln("== 008 JSON ==")
 	examples.JSONExample()
 
+	myPrintln("== 009 Slice ==")
+	examples.SliceExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
