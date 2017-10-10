@@ -35,6 +35,9 @@ func main() {
 	myPrintln("== 007 Parse options ==")
 	examples.ParseOptionsExample()
 
+	myPrintln("== 008 JSON ==")
+	examples.JSONExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
