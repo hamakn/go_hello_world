@@ -3,22 +3,29 @@ package examples
 // みんなのGo p.70 go-humanize
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
-	"github.com/dustin/go-humanize"
+	humanize "github.com/dustin/go-humanize"
+)
+
+var filename_flag *string = flag.String(
+	"filename",
+	"",
+	"filename to show filesize on m070_go-humanize",
 )
 
 func GoHumanize() {
-	if len(os.Args) <= 1 {
-		fmt.Println("No os.Args[1]")
+	flag.Parse()
+	if *filename_flag == "" {
+		fmt.Println("No option --filename")
 		return
 	}
-	name := os.Args[1]
-	s, _ := os.Stat(name)
+	s, _ := os.Stat(*filename_flag)
 	fmt.Printf(
 		"%s: %s\n",
-		name,
+		*filename_flag,
 		humanize.Bytes(uint64(s.Size())),
 	)
 }

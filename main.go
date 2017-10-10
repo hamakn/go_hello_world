@@ -32,6 +32,9 @@ func main() {
 	myPrintln("== 006 Switch ==")
 	examples.SwitchExample()
 
+	myPrintln("== 007 Parse options ==")
+	examples.ParseOptionsExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
