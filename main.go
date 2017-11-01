@@ -41,6 +41,9 @@ func main() {
 	myPrintln("== 009 Slice ==")
 	examples.SliceExample()
 
+	myPrintln("== 010 Map ==")
+	examples.MapExample()
+
 	// fmt.Println("== m034 Httpd ==")
 	// examples.Httpd()
 
