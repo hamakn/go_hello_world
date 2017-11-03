@@ -1,6 +1,10 @@
 package examples
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"regexp"
+)
 
 func printIntSlice(label string, x []int) {
 	fmt.Printf(
@@ -50,4 +54,19 @@ func SliceExample() {
 	field[0][1] = 1
 	field[4][5] = 2
 	fmt.Println(field)
+
+	// re-slicing時のメモリ開放に対する注意点
+	//   https://blog.golang.org/go-slices-usage-and-internals
+	//   http://dibtp.hateblo.jp/entry/2014/07/06/190804
+	// main.goファイル内から、最初の数字を拾ってくる
+	fmt.Printf("%s\n", findDigits("./main.go"))
+}
+
+var digitRegexp = regexp.MustCompile("[0-9]+")
+
+func findDigits(filename string) []byte {
+	b, _ := ioutil.ReadFile(filename)
+	// digitRegexp.Find(b) して得られるsliceは、bへの参照なので、それをreturnするとbがメモリに残り続けてしまう
+	// なので、bを（メモリ的に）コピーした物を返すことで、bを開放の対象とする
+	return append([]byte{}, digitRegexp.Find(b)...)
 }
