@@ -55,4 +55,7 @@ func main() {
 
 	myPrintln("== m081 TimerByContext ==")
 	examples.TimerByContext()
+
+	myPrintln("== 011 HttpClient ==")
+	examples.HttpClientExample()
 }
