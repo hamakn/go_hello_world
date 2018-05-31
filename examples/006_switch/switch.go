@@ -1,4 +1,4 @@
-package examples
+package main
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func SwitchExample() {
+func main() {
 	// breakは必要ない
 	fmt.Print("Go runs os on: ")
 	switch os := runtime.GOOS; os {

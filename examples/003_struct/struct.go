@@ -1,4 +1,4 @@
-package examples
+package main
 
 import "fmt"
 
@@ -19,8 +19,9 @@ func passByReference(v *Vertex) {
 	fmt.Println(*v)
 }
 
-func StructExample() {
+func main() {
 	v := Vertex{1, 2}
+	fmt.Println("-- original --")
 	fmt.Println(v)
 
 	fmt.Println("-- passByValue --")

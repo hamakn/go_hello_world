@@ -1,4 +1,4 @@
-package examples
+package main
 
 // みんなのGo p.81 自前timeout by context package
 // context packageはGo 1.7以降
@@ -10,9 +10,7 @@ import (
 	"time"
 )
 
-var wg sync.WaitGroup
-
-func doSomething2(ctx context.Context) error {
+func doSomething2(ctx context.Context, wg *sync.WaitGroup) error {
 	for {
 		select {
 		case <-ctx.Done():
@@ -26,13 +24,14 @@ func doSomething2(ctx context.Context) error {
 	}
 }
 
-func TimerByContext() {
+func main() {
 	ctx, _ := context.WithTimeout(context.Background(), 3*time.Second)
 	done := make(chan error)
 
+	var wg sync.WaitGroup
 	wg.Add(1)
 	go func() {
-		done <- doSomething2(ctx)
+		done <- doSomething2(ctx, &wg)
 	}()
 
 	wg.Wait()

@@ -1,6 +1,7 @@
-package examples
+package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -11,7 +12,7 @@ type Message struct {
 	Text string
 }
 
-func JSONExample() {
+func main() {
 	message := Message{1, "JSONExample"}
 
 	// encoding to json
@@ -26,4 +27,15 @@ func JSONExample() {
 	bdata2, _ := json.Marshal(messages)
 	os.Stdout.Write(bdata2)
 	fmt.Println("")
+
+	// Load
+	msgs1 := []Message{}
+	json.Unmarshal([]byte(`[{"id":1,"text":"hoge"},{"id":2,"text":"fuga"}]`), &msgs1)
+	fmt.Println(msgs1)
+
+	// Load from bytes(io.Writer)
+	msgs2 := []Message{}
+	buf := bytes.NewBufferString(`[{"id":1,"text":"hoge"},{"id":2,"text":"fuga"}]`)
+	json.NewDecoder(buf).Decode(&msgs2)
+	fmt.Println(msgs2)
 }

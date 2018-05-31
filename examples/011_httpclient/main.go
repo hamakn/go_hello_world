@@ -1,4 +1,4 @@
-package examples
+package main
 
 import (
 	"context"
@@ -12,7 +12,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "hello")
 }
 
-func HttpClientExample() {
+func main() {
 	// create server
 	server := &http.Server{
 		Addr:    ":8080",

@@ -1,4 +1,4 @@
-package examples
+package main
 
 // $ go test ./examples/
 

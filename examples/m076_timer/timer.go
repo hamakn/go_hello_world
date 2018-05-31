@@ -1,4 +1,4 @@
-package examples
+package main
 
 // みんなのGo p.76 自前timeout
 
@@ -12,7 +12,7 @@ func doSomething() error {
 	return nil
 }
 
-func Timer() {
+func main() {
 	timer := time.NewTimer(3 * time.Second)
 	done := make(chan error)
 	// done := make(chan AsyncResult)

@@ -1,4 +1,4 @@
-package examples
+package main
 
 // みんなのGo p.34 file/filepath
 
@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 )
 
-func Httpd() {
+func main() {
 	cwd, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)

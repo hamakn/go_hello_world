@@ -1,4 +1,4 @@
-package examples
+package main
 
 import "fmt"
 
@@ -6,7 +6,7 @@ type Geo struct {
 	Lat, Long float64
 }
 
-func MapExample() {
+func main() {
 	// 1. 普通に宣言する
 	var map1 map[string]Geo
 	map1 = make(map[string]Geo)

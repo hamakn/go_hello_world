@@ -1,4 +1,4 @@
-package examples
+package main
 
 import (
 	"flag"
@@ -17,7 +17,7 @@ var int_flag *int = flag.Int(
 	"help message for int_flag",
 )
 
-func ParseOptionsExample() {
+func main() {
 	fmt.Println("use command line options like: --string_flag aaa --int_flag 42")
 	flag.Parse()
 	fmt.Println(*string_flag)

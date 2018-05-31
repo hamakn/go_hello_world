@@ -1,4 +1,4 @@
-package examples
+package main
 
 import "fmt"
 
@@ -18,7 +18,7 @@ func arrayAdder(args []int) int {
 	return total
 }
 
-func VariadicFunctionExample() {
+func main() {
 	nums := []int{10, 20, 30}
 	fmt.Println(variadicAdder(nums...))
 	fmt.Println(arrayAdder(nums))

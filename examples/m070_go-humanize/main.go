@@ -1,4 +1,4 @@
-package examples
+package main
 
 // みんなのGo p.70 go-humanize
 
@@ -16,7 +16,7 @@ var filename_flag *string = flag.String(
 	"filename to show filesize on m070_go-humanize",
 )
 
-func GoHumanize() {
+func main() {
 	flag.Parse()
 	if *filename_flag == "" {
 		fmt.Println("No option --filename")

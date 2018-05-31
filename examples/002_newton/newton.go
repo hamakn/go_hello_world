@@ -1,8 +1,16 @@
-package examples
+package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
-func MySqrt(x float64) float64 {
+func main() {
+	fmt.Println(mysqrt(2))
+	fmt.Println(math.Sqrt(2))
+}
+
+func mysqrt(x float64) float64 {
 	z := 1.0
 	//for i := 0; i < 10; i++ {
 	//    z = z - (z * z - x) / (2 * x)

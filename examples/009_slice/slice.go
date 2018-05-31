@@ -1,4 +1,4 @@
-package examples
+package main
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ func printIntSlice(label string, x []int) {
 	)
 }
 
-func SliceExample() {
+func main() {
 	slice := []int{1, 1, 2, 3, 5, 8}
 	printIntSlice("`slice := []int{1, 1, 2, 3, 5, 8}`", slice)
 
